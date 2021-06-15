@@ -2,8 +2,10 @@
 #include <Adafruit_PWMServoDriver.h> // https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library
 #include <Wire.h>							 // https://www.arduino.cc/en/reference/wire
 
+
 //Constants
 #define nbPCAServo 16
+
 
 //Parameters
 int MIN_IMP[nbPCAServo] = { 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 };
@@ -11,8 +13,10 @@ int MAX_IMP[nbPCAServo] = { 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 2500
 int MIN_ANG[nbPCAServo] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 int MAX_ANG[nbPCAServo] = { 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180 };
 
+
 //Objects
 Adafruit_PWMServoDriver pca = Adafruit_PWMServoDriver( 0x40 );
+
 
 void setup()
 {
@@ -24,10 +28,12 @@ void setup()
 	pinMode( LED_BUILTIN, OUTPUT ); // Initialize the LED_BUILTIN pin as an output
 }
 
+
 void loop()
 {
 	pcaScenario();
 }
+
 
 void pcaScenario()
 {
@@ -65,6 +71,7 @@ void pcaScenario()
 			Serial.println( "Turning off the LED" );
 	}
 } // End of pcaScenario() function.
+
 
 int jointToImp( double x, int i )
 {
